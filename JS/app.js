@@ -15,7 +15,7 @@ const myApp = Vue.createApp({
     return {
       movie: {
         title: "The Lord Of The Rings",
-        category: "fantasy forse e' riduttivo",
+        category: "Fantasy",
         length: 6720,
         images: [
           "./IMG/LOTR.01.jpg",
@@ -44,6 +44,16 @@ const myApp = Vue.createApp({
         this.movie.thumbAttiva++;
       }
     },
+    thumbOnClick(indicedila) {
+      this.movie.thumbAttiva = indicedila;
+    },
+  },
+  //  ! per accedere ad un metodo si usa il this
+
+  created() {
+    setInterval(() => {
+      this.nextImage();
+    }, 3000);
   },
 });
 

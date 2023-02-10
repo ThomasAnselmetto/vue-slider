@@ -70,8 +70,10 @@
         </div>
         <!-- DETAILS -->
         <div class="details mb-3 p-3">
-          <h2 class="title">{{movie.title}}</h2>
-          <h4 class="category">{{movie.category}}</h4>
+          <h1 class="title">{{movie.title}}</h1>
+          <h2 class="category">
+            Credo che {{movie.category}} sia riduttivo!!😂😂😂
+          </h2>
           <h5 class="length">
             Saranno {{movie.length}} minuti di pura bellezza.
           </h5>
@@ -89,6 +91,7 @@
           </div>
         </div>
 
+        <!-- Ricorda che se ce il v-for avrai piu' indici  -->
         <!-- THUMBNAILS -->
         <div class="row cols-5">
           <div class="col thumb">
@@ -96,6 +99,7 @@
               v-bind:src="image"
               v-for="(image, index) in movie.images"
               :class="(index == movie.thumbAttiva) ? 'active' : ''"
+              v-on:click="thumbOnClick(index)"
             />
           </div>
         </div>
